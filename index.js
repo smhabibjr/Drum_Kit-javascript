@@ -46,54 +46,57 @@ function handlerClicked() {
   }
 }
 
-document.addEventListener("keypress", logKey);
+document.addEventListener("keypress", function (e) {
+  console.log(e);
+  logKey(e);
+});
 
-  function logKey(e) {
-    var keyCode = e.code;
-    var keyboard_key = keyCode.slice(3);
+function logKey(e) {
+  var keyCode = e.code;
+  var keyboard_key = keyCode.slice(3);
 
-    console.log("hi there " + keyboard_key.toLowerCase());
-    
+  console.log("hi there " + keyboard_key.toLowerCase());
 
-    switch (keyboard_key.toLowerCase()) {
-      case "w":
-        var audio = new Audio("../sounds/tom-1.mp3");
-        audio.play();
-        document.querySelector('.w').classList.toggle("frontcolor");
-        break;
-      case "a":
-        var audio = new Audio("../sounds/tom-2.mp3");
-        audio.play();
-        document.querySelector(".a").classList.toggle("frontcolor");
-        break;
+  switch (keyboard_key.toLowerCase()) {
+    case "w":
+      var audio = new Audio("../sounds/tom-1.mp3");
+      audio.play();
+      document.querySelector(".w").classList.toggle("frontcolor");
+      break;
+    case "a":
+      var audio = new Audio("../sounds/tom-2.mp3");
+      audio.play();
+      document.querySelector(".a").classList.toggle("frontcolor");
+      break;
 
-      case "s":
-        var audio = new Audio("../sounds/tom-3.mp3");
-        audio.play();
-        document.querySelector(".s").classList.toggle("frontcolor");
-        break;
-      case "d":
-        var audio = new Audio("../sounds/tom-4.mp3");
-        audio.play();
-        document.querySelector(".d").classList.toggle("frontcolor");
-        break;
-      case "j":
-        var audio = new Audio("../sounds/crash.mp3");
-        audio.play();
-        document.querySelector(".j").classList.toggle("frontcolor");
-        break;
-      case "k":
-        var audio = new Audio("../sounds/kick-bass.mp3");
-        audio.play();
-        document.querySelector(".k").classList.toggle("frontcolor");
-        break;
-      case "l":
-        var audio = new Audio("../sounds/snare.mp3");
-        audio.play();
-        document.querySelector(".l").classList.toggle("frontcolor");
-        break;
-      default:
-        console.log("value " + keyboard_key.toLowerCase());
-    }
-
+    case "s":
+      var audio = new Audio("../sounds/tom-3.mp3");
+      audio.play();
+      document.querySelector(".s").classList.toggle("frontcolor");
+      break;
+    case "d":
+      var audio = new Audio("../sounds/tom-4.mp3");
+      audio.play();
+      document.querySelector(".d").classList.toggle("frontcolor");
+      break;
+    case "j":
+      var audio = new Audio("../sounds/crash.mp3");
+      audio.play();
+      document.querySelector(".j").classList.toggle("frontcolor");
+      break;
+    case "k":
+      var audio = new Audio("../sounds/kick-bass.mp3");
+      audio.play();
+      document.querySelector(".k").classList.toggle("frontcolor");
+      break;
+    case "l":
+      var audio = new Audio("../sounds/snare.mp3");
+      audio.play();
+      document.querySelector(".l").classList.toggle("frontcolor");
+      break;
+    default:
+      console.log("value " + keyboard_key.toLowerCase());
   }
+}
+
+
