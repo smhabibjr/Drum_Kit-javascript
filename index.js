@@ -52,12 +52,8 @@ document.addEventListener("keypress", function (e) {
 });
 
 function logKey(e) {
-  var keyCode = e.code;
-  var keyboard_key = keyCode.slice(3);
-
-  console.log("hi there " + keyboard_key.toLowerCase());
-
-  switch (keyboard_key.toLowerCase()) {
+  var keyCode = e.key;
+  switch (keyCode.toLowerCase()) {
     case "w":
       var audio = new Audio("../sounds/tom-1.mp3");
       audio.play();
