@@ -9,17 +9,26 @@ function handlerClicked() {
   var value = this.innerHTML;
   this.classList.toggle("frontcolor");
   var value = this.textContent;
-switch_function(value);
+  switch_function(value);
+
+  animation(value);
+}
+
+function animation(keyvalue) {
+  document.querySelector("." + keyvalue).classList.add("pressed");
+
+  setTimeout(function () {
+    document.querySelector("." + keyvalue).classList.remove("pressed");
+  }, 100);
 }
 
 document.addEventListener("keypress", function (e) {
   var key_name = e.key.toLocaleLowerCase();
   switch_function(key_name);
+  animation(key_name);
 });
 
-
-
-function switch_function(value){
+function switch_function(value) {
   switch (value) {
     case "w":
       var audio = new Audio("../sounds/tom-1.mp3");
@@ -54,11 +63,3 @@ function switch_function(value){
       console.log("value " + value);
   }
 }
-
-
-
-
-
-
-
-
